@@ -75,6 +75,7 @@
   gap: 0.5rem;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .primaryButton:hover {
@@ -96,6 +97,7 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .secondaryButton:hover {
@@ -348,6 +350,7 @@
   align-items: center;
   gap: 0.625rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .ctaButton:hover {

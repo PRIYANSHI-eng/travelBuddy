@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -40,18 +41,18 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className={styles.ctaButtons}>
-              <button className={styles.primaryButton}>
+              <Link href="/request" className={styles.primaryButton}>
                 Start Your Travel Request
                 <svg className={styles.icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
-              <button className={styles.secondaryButton}>
-                How It Works
+              </Link>
+              <Link href="/request" className={styles.secondaryButton}>
+                Plan Your Trip
                 <svg className={styles.icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -142,12 +143,12 @@ export default function Home() {
             <p className={styles.ctaSubtext}>
               Ready to explore? Our travel experts are here to help you design the perfect trip, customized for your goals and budget!
             </p>
-            <button className={styles.ctaButton}>
+            <Link href="/request" className={styles.ctaButton}>
               Plan Your Trip
               <svg className={styles.ctaArrow} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

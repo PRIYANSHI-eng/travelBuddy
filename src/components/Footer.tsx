@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import styles from "@/styles/Footer.module.css";
 
 export default function Footer() {
@@ -21,8 +20,8 @@ export default function Footer() {
           <div className={styles.footerColumn}>
             <h4 className={styles.columnTitle}>Explore</h4>
             <ul className={styles.linkList}>
-              <li><a href="#home" className={styles.footerLink}>Home</a></li>
-              <li><a href="#how-it-works" className={styles.footerLink}>How It Works</a></li>
+              <li><a href="/" className={styles.footerLink}>Home</a></li>
+              <li><a href="/request" className={styles.footerLink}>Travel Request</a></li>
               <li><a href="#services" className={styles.footerLink}>Services</a></li>
               <li><a href="#contact" className={styles.footerLink}>Contact</a></li>
             </ul>
@@ -44,7 +43,7 @@ export default function Footer() {
             <ul className={styles.linkList}>
               <li><a href="#help" className={styles.footerLink}>Help Center</a></li>
               <li><a href="#faq" className={styles.footerLink}>FAQ</a></li>
-              <li><a href="#contact" className={styles.footerLink}>Contact Us</a></li>
+              <li><a href="/contact" className={styles.footerLink}>Contact Us</a></li>
             </ul>
           </div>
         </div>

@@ -1,0 +1,573 @@
+/* Main Layout */
+.main {
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 8rem;
+}
+
+.formContainer {
+  width: 100%;
+}
+
+.errorMessage {
+  padding: 1rem 1.25rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.75rem;
+  color: #dc2626;
+  margin-bottom: 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.required {
+  color: #dc2626;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: white;
+  transition: all 0.3s;
+  color: #111827;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
+.helperText {
+  padding: 1rem;
+  background: #f0fdf4;
+  border: 1px solid #d1fae5;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: #065f46;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+/* Progress Indicator */
+.progressContainer {
+  margin-bottom: 2.5rem;
+  padding-top: 5rem;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.progressText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progressBarContainer {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #059669, #10b981);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.stepLabels {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.stepLabel {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  flex: 1;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.stepLabelActive {
+  color: #059669;
+  font-weight: 600;
+}
+
+.stepLabelCompleted {
+  color: #6b7280;
+}
+
+/* Step Content */
+.stepContent {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stepTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.stepSubtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* Service Cards (Step 1) */
+.serviceGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.serviceCard {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.serviceCard:hover {
+  border-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
+}
+
+.serviceCardSelected {
+  border-color: #059669;
+  background: #f0fdf4;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.serviceName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.serviceDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Form Elements */
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: white;
+  transition: all 0.3s;
+  color: #111827;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+/* Date Group */
+.dateGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Counter */
+.counterContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  border: 2px solid #e5e7eb;
+  width: fit-content;
+}
+
+.counterButton {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid #059669;
+  background: white;
+  color: #059669;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counterButton:hover {
+  background: #059669;
+  color: white;
+}
+
+.counterValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  min-width: 2rem;
+  text-align: center;
+}
+
+/* Budget Slider */
+.budgetDisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  border: 2px solid #e5e7eb;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #059669;
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #059669;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+  transition: all 0.3s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #059669;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+  transition: all 0.3s;
+}
+
+/* Travel Style Cards */
+.travelStyleGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.travelStyleCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.travelStyleCard:hover {
+  border-color: #059669;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.1);
+}
+
+.travelStyleSelected {
+  border-color: #059669;
+  background: #f0fdf4;
+}
+
+.radioCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.travelStyleSelected .radioCircle {
+  border-color: #059669;
+}
+
+.radioInner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #059669;
+}
+
+.travelStyleName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.125rem;
+}
+
+.travelStyleDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Interest Chips */
+.interestGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.interestChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.interestChip:hover {
+  border-color: #059669;
+  background: #f0fdf4;
+}
+
+.interestChipSelected {
+  border-color: #059669;
+  background: #f0fdf4;
+  color: #059669;
+}
+
+.interestIcon {
+  font-size: 1.125rem;
+}
+
+/* Contact Form */
+.toggleGroup {
+  margin-bottom: 1.5rem;
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 1rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  transition: all 0.3s;
+}
+
+.toggleLabel:hover {
+  border-color: #059669;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #059669;
+}
+
+.toggleText {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.helperText {
+  padding: 1rem;
+  background: #f0fdf4;
+  border: 1px solid #d1fae5;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: #065f46;
+  line-height: 1.5;
+}
+
+/* Button Container */
+.buttonContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.backButton {
+  flex: 1;
+  padding: 1rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.backButton:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.continueButton,
+.submitButton {
+  flex: 2;
+  padding: 1rem;
+  background: #059669;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+.continueButton:hover:not(:disabled),
+.submitButton:hover:not(:disabled) {
+  background: #047857;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.3);
+}
+
+.continueButton:disabled,
+.submitButton:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .container {
+    padding: 2.5rem 2rem 8rem;
+  }
+
+  .stepTitle {
+    font-size: 2.25rem;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .buttonContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 999px 999px 0 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .progressContainer {
+    padding-top: 6rem;
+  }
+}
