@@ -123,22 +123,31 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* How It Works Preview */}
-        <div className={styles.howItWorksPreview}>
-          <div className={styles.stepsContainer}>
-            <div className={styles.step}>
-              <span className={styles.stepNumber}>Step 1:</span>
-              <span className={styles.stepText}>Share basic travel details</span>
-            </div>
-            <div className={styles.step}>
-              <span className={styles.stepNumber}>Step 2:</span>
-              <span className={styles.stepText}>We contact you with best options</span>
-            </div>
-            <div className={styles.step}>
-              <span className={styles.stepNumber}>Step 3:</span>
-              <span className={styles.stepText}>You confirm, we book</span>
-            </div>
+      {/* CTA Section */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaImageWrapper}>
+          <Image 
+            src="/assests/image4.jpg" 
+            alt="Plan your trip"
+            fill
+            className={styles.ctaImage}
+            sizes="100vw"
+            priority={false}
+          />
+          <div className={styles.ctaOverlay} />
+          <div className={styles.ctaContent}>
+            <h2 className={styles.ctaHeading}>Start Planning Your Next Adventure</h2>
+            <p className={styles.ctaSubtext}>
+              Ready to explore? Our travel experts are here to help you design the perfect trip, customized for your goals and budget!
+            </p>
+            <button className={styles.ctaButton}>
+              Plan Your Trip
+              <svg className={styles.ctaArrow} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
