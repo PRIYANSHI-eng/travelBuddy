@@ -1,22 +1,16 @@
+/* Thank You Page - Clean Mobile-Inspired Design */
 .main {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 1.5rem;
 }
 
-.content {
-  max-width: 550px;
+.container {
   width: 100%;
-  text-align: center;
+  max-width: 480px;
+  padding: 3rem 2rem;
   animation: fadeInUp 0.6s ease-out;
 }
 
@@ -31,16 +25,20 @@
   }
 }
 
-.iconContainer {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 2rem;
-  background: #059669;
-  border-radius: 50%;
+.content {
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+}
+
+/* Video Container */
+.videoContainer {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  overflow: hidden;
   animation: scaleIn 0.5s ease-out 0.2s both;
 }
 
@@ -53,133 +51,170 @@
   }
 }
 
-.checkIcon {
-  width: 48px;
-  height: 48px;
-  color: white;
-  stroke-width: 3;
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Illustration (for warning state) */
+.illustration {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 2rem;
+  animation: scaleIn 0.5s ease-out 0.2s both;
+}
+
+.illustrationSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: #111827;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  font-family: inherit;
 }
 
 .message {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #6b7280;
-  margin-bottom: 2rem;
+  margin: 0 0 2.5rem 0;
   line-height: 1.6;
 }
 
+/* Info Box */
 .infoBox {
-  background: white;
-  border: 2px solid #d1fae5;
-  border-radius: 1rem;
-  padding: 1.5rem;
+  background: transparent;
+  border-radius: 16px;
+  padding: 1.75rem;
   margin-bottom: 2rem;
   text-align: left;
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
+  width: 100%;
+  border: 1px solid #e5e7eb;
 }
 
-.infoText {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #059669;
-  margin-bottom: 0.75rem;
+.infoTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #10b981;
+  margin: 0 0 0.75rem 0;
+  font-family: inherit;
 }
 
 .infoDescription {
   font-size: 0.9375rem;
   color: #374151;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin: 0;
 }
 
+/* Buttons */
 .buttonGroup {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
-.homeButton,
-.secondaryButton {
+.homeButton {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  border-radius: 0.75rem;
+  padding: 1rem 3rem;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s;
   text-align: center;
-}
-
-.homeButton {
-  background: #059669;
-  color: white;
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .homeButton:hover {
-  background: #047857;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4);
 }
 
 .secondaryButton {
+  display: inline-block;
+  padding: 1rem 3rem;
   background: white;
-  color: #059669;
-  border: 2px solid #d1fae5;
+  color: #1e40af;
+  border: 2px solid #1e40af;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  text-align: center;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .secondaryButton:hover {
-  background: #f0fdf4;
-  border-color: #059669;
+  background: #eff6ff;
+  border-color: #1e3a8a;
+  transform: translateY(-2px);
 }
 
-.contactText {
-  font-size: 0.9375rem;
-  color: #6b7280;
-  line-height: 1.6;
-}
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    border-radius: 24px;
+    padding: 2.5rem 1.5rem;
+  }
 
-.phoneLink {
-  color: #059669;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.phoneLink:hover {
-  color: #047857;
-  text-decoration: underline;
-}
-
-@media (min-width: 640px) {
   .title {
-    font-size: 3rem;
+    font-size: 1.875rem;
   }
 
-  .iconContainer {
-    width: 100px;
-    height: 100px;
+  .illustration {
+    width: 150px;
+    height: 150px;
   }
 
-  .checkIcon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .buttonGroup {
-    flex-direction: row;
-    justify-content: center;
+  .infoBox {
+    padding: 1.5rem;
   }
 
   .homeButton,
   .secondaryButton {
-    flex: 1;
-    max-width: 220px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) {
+  .container {
+    padding: 4rem 3rem;
+  }
+
+  .videoContainer {
+    max-width: 350px;
+  }
+
+  .illustration {
+    width: 200px;
+    height: 200px;
+  }
+
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .message {
+    font-size: 1.125rem;
+  }
+
+  .infoTitle {
+    font-size: 1.25rem;
   }
 }

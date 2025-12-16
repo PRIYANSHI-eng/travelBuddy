@@ -1,6 +1,5 @@
 .main {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
   display: flex;
   flex-direction: column;
 }
@@ -51,6 +50,21 @@
   to {
     transform: scale(1);
   }
+}
+
+.videoContainer {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  animation: scaleIn 0.5s ease-out 0.2s both;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .checkIcon {
@@ -144,6 +158,10 @@
 @media (min-width: 640px) {
   .title {
     font-size: 3rem;
+  }
+
+  .videoContainer {
+    max-width: 350px;
   }
 
   .iconContainer {
