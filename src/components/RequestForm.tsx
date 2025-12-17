@@ -145,36 +145,61 @@ export default function RequestForm() {
 
   return (
     <div className={styles.requestContainer}>
-      {/* Left Sidebar */}
+      {/* Left Sidebar with Image Background */}
       <aside className={styles.sidebar}>
+        {/* Background Image */}
+        <div className={styles.sidebarBackground}></div>
+        
+        {/* Dark Gradient Overlay */}
+        <div className={styles.sidebarOverlay}></div>
+        
+        {/* Sidebar Content */}
         <div className={styles.sidebarContent}>
           <div className={styles.brandSection}>
-            <div className={styles.iconWrapper}>
-              <span className={styles.brandIcon}>✈️</span>
-            </div>
             <h2 className={styles.brandTitle}>Your Travel Request</h2>
-          </div>
-
-          <div className={styles.stepIndicator}>
-            <span className={styles.stepLabel}>STEP {currentStep}</span>
-            <h3 className={styles.stepTitle}>
-              {currentStep === 1 && "Services Selection"}
-              {currentStep === 2 && "Trip Details"}
-              {currentStep === 3 && "Your Preferences"}
-              {currentStep === 4 && "Contact Information"}
-            </h3>
-          </div>
-
-          <p className={styles.sidebarDescription}>
-            We handle everything personally — from flights and hotels to visas and travel insurance. 
-            Just tell us your preferences, and we'll craft the perfect journey for you.
-          </p>
-
-          <div className={styles.didYouKnow}>
-            <h4 className={styles.didYouKnowTitle}>DID YOU KNOW:</h4>
-            <p className={styles.didYouKnowText}>
-              Your trip is planned by a real traveler, not an algorithm. Every itinerary is designed by someone who has explored multiple countries, understands real-world travel challenges, and plans journeys the way they would plan their own.
+            <p className={styles.brandSubtitle}>
+              Tell us your travel dreams, we&apos;ll make them reality
             </p>
+          </div>
+
+          {/* Vertical Timeline Progress Indicator */}
+          <div className={styles.timelineContainer}>
+            {[
+              { id: 1, title: "Services Selection" },
+              { id: 2, title: "Trip Details" },
+              { id: 3, title: "Your Preferences" },
+              { id: 4, title: "Contact Information" }
+            ].map((step, index) => (
+              <div 
+                key={step.id} 
+                className={`${styles.timelineStep} ${
+                  index + 1 === currentStep ? styles.timelineStepActive : ""
+                } ${index + 1 < currentStep ? styles.timelineStepCompleted : ""}`}
+              >
+                <div className={styles.timelineMarker}>
+                  {index + 1 < currentStep ? (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M9 12l2 2 4-4"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ) : (
+                    <span>{step.id}</span>
+                  )}
+                </div>
+                <div className={styles.timelineContent}>
+                  <h3 className={styles.timelineTitle}>{step.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.inspirationalText}>
+            <p>&quot;The world is a book, and those who do not travel read only one page.&quot;</p>
           </div>
         </div>
       </aside>

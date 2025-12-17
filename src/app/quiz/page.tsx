@@ -188,63 +188,62 @@ export default function QuizPage() {
       <Navbar />
       
       <div className={styles.quizContainer}>
-        {/* Left Sidebar */}
+        {/* Left Sidebar with Image Background */}
         <aside className={styles.sidebar}>
+          {/* Background Image */}
+          <div className={styles.sidebarBackground}></div>
+          
+          {/* Dark Gradient Overlay */}
+          <div className={styles.sidebarOverlay}></div>
+          
+          {/* Sidebar Content */}
           <div className={styles.sidebarContent}>
             <div className={styles.brandSection}>
-              <div className={styles.iconWrapper}>
-                <span className={styles.brandIcon}>✈️</span>
-              </div>
-              <h2 className={styles.brandTitle}>Your Travel Profile</h2>
-            </div>
-
-            <div className={styles.stepIndicator}>
-              <span className={styles.stepLabel}>STEP {currentStep + 1}</span>
-              <h3 className={styles.stepTitle}>{currentQuestion.title}</h3>
-            </div>
-
-            <p className={styles.sidebarDescription}>
-              Curabitur vitae lacinia nulla. Aenean viverra felis vitae convallis malesuada. 
-              Suspendisse vestibulum sit amet risus quis fermentum. Fusce sit amet nisl malesuada.
-            </p>
-
-            <div className={styles.didYouKnow}>
-              <h4 className={styles.didYouKnowTitle}>DID YOU KNOW:</h4>
-              <p className={styles.didYouKnowText}>
-                Vivamus nec luctus nisl. Donec tempor odio sed sapien tempus, eget commodo 
-                arci hendrerit. Donec eu tellus sed ex fermentum sodales.
+              <h2 className={styles.brandTitle}>Your Journey Begins</h2>
+              <p className={styles.brandSubtitle}>
+                Let&apos;s create your perfect travel experience
               </p>
             </div>
 
-            <a href="#" className={styles.contactLink}>
-              Questions? <span className={styles.contactLinkBold}>Contact customer care.</span>
-            </a>
+            {/* Vertical Timeline Progress Indicator */}
+            <div className={styles.timelineContainer}>
+              {quizSteps.map((step, index) => (
+                <div 
+                  key={step.id} 
+                  className={`${styles.timelineStep} ${
+                    index === currentStep ? styles.timelineStepActive : ""
+                  } ${index < currentStep ? styles.timelineStepCompleted : ""}`}
+                >
+                  <div className={styles.timelineMarker}>
+                    {index < currentStep ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M9 12l2 2 4-4"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    ) : (
+                      <span>{index + 1}</span>
+                    )}
+                  </div>
+                  <div className={styles.timelineContent}>
+                    <h3 className={styles.timelineTitle}>{step.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.inspirationalText}>
+              <p>&quot;Every journey begins with a single step. Let us guide yours.&quot;</p>
+            </div>
           </div>
         </aside>
 
         {/* Main Quiz Area */}
         <div className={styles.quizMain}>
-          {/* Progress Bar */}
-          <div className={styles.progressBarContainer}>
-            <div className={styles.progressBar}>
-              <div 
-                className={styles.progressFill} 
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <div className={styles.progressSteps}>
-              {quizSteps.map((step, index) => (
-                <div
-                  key={step.id}
-                  className={`${styles.progressStep} ${
-                    index <= currentStep ? styles.progressStepActive : ""
-                  }`}
-                >
-                  {index + 1}
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Question Content */}
           <div className={styles.questionContainer}>
