@@ -141,7 +141,7 @@
 
 /* Progress Bar */
 .progressBarContainer {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -201,7 +201,6 @@
 
 /* Step Content */
 .stepContent {
-  flex: 1;
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.4s ease-out;
@@ -222,7 +221,7 @@
   font-size: 2.25rem;
   font-weight: 700;
   color: #111827;
-  margin: 0 0 3rem 0;
+  margin: 0 0 2.5rem 0;
   line-height: 1.2;
 }
 
@@ -231,7 +230,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .optionCard {
@@ -491,8 +490,8 @@
 .navigationButtons {
   display: flex;
   justify-content: space-between;
-  margin-top: auto;
-  padding-top: 2rem;
+  margin-top: 4rem;
+  padding-top: 0;
   gap: 1rem;
 }
 

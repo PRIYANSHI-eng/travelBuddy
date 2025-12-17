@@ -176,10 +176,6 @@ export default function RequestForm() {
               Your trip is planned by a real traveler, not an algorithm. Every itinerary is designed by someone who has explored multiple countries, understands real-world travel challenges, and plans journeys the way they would plan their own.
             </p>
           </div>
-
-          <a href="/contact" className={styles.contactLink}>
-            Questions? <span className={styles.contactLinkBold}>Contact customer care.</span>
-          </a>
         </div>
       </aside>
 

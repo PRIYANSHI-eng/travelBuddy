@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import styles from "@/styles/thank-you.module.css";
 
 export default function ThankYouPage() {
@@ -31,39 +32,20 @@ export default function ThankYouPage() {
   // If form not submitted, show different message
   if (!hasSubmitted) {
     return (
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <div className={styles.content}>
-            {/* Warning Illustration */}
-            <div className={styles.illustration}>
-              <svg viewBox="0 0 200 200" className={styles.illustrationSvg}>
-                {/* Warning Icon */}
-                <circle cx="100" cy="100" r="60" fill="#fbbf24" />
-                <text x="100" y="125" fontSize="80" textAnchor="middle" fill="#fff" fontWeight="bold">!</text>
-              </svg>
-            </div>
-
-            <h1 className={styles.title}>Oops!</h1>
+      <main className={styles.emptyState}>
+        <Navbar />
+        <div className={styles.heroSection}>
+          <div className={styles.heroOverlay}></div>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>You're Almost There</h1>
             
-            <p className={styles.message}>
-              You haven't submitted a travel request yet.
+            <p className={styles.heroSubtitle}>
+              Looks like you haven't submitted your travel request yet. Share a few details and we'll personally take it from here.
             </p>
             
-            <div className={styles.infoBox}>
-              <h3 className={styles.infoTitle}>Ready to plan your dream trip?</h3>
-              <p className={styles.infoDescription}>
-                Fill out our travel request form and let our expert help you create the perfect journey. It only takes a few minutes!
-              </p>
-            </div>
-
-            <div className={styles.buttonGroup}>
-              <Link href="/request" className={styles.homeButton}>
-                Start Travel Request
-              </Link>
-              <Link href="/" className={styles.secondaryButton}>
-                Back to Home
-              </Link>
-            </div>
+            <Link href="/request" className={styles.heroCta}>
+              Start Your Travel Request
+            </Link>
           </div>
         </div>
       </main>
@@ -73,22 +55,17 @@ export default function ThankYouPage() {
   // Success state - form was submitted
   return (
     <main className={styles.main}>
+      <Navbar />
       <div className={styles.container}>
         <div className={styles.content}>
-          {/* Video */}
-          <div className={styles.videoContainer}>
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={styles.video}
-            >
-              <source src="/assests/video 2.mp4" type="video/mp4" />
-            </video>
+          {/* Image */}
+          <div className={styles.imageContainer}>
+            <img
+              src="/assests/image5.png"
+              alt="Travel confirmation"
+              className={styles.mainImage}
+            />
           </div>
-
-          <h1 className={styles.title}>Thank You!</h1>
           
           <p className={styles.message}>
             Your travel request has been received successfully.
@@ -101,8 +78,8 @@ export default function ThankYouPage() {
             </p>
           </div>
 
-          <Link href="/" className={styles.homeButton}>
-            Back to Home
+          <Link href="/contact" className={styles.submitButton}>
+            Contact Us
           </Link>
         </div>
       </div>
