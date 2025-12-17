@@ -184,10 +184,11 @@ export default function QuizPage() {
   };
 
   return (
-    <main className={styles.main}>
-      <Navbar />
-      
-      <div className={styles.quizContainer}>
+    <div className="page-with-sidebar">
+      <main className={styles.main}>
+        <Navbar />
+        
+        <div className={styles.quizContainer}>
         {/* Left Sidebar with Image Background */}
         <aside className={styles.sidebar}>
           {/* Background Image */}
@@ -356,6 +357,7 @@ export default function QuizPage() {
           </div>
         </div>
       </div>
-    </main>
+      </main>
+    </div>
   );
 }

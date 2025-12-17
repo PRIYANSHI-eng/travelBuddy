@@ -14,13 +14,11 @@
 /* ===== LEFT SIDEBAR WITH IMAGE BACKGROUND ===== */
 .sidebar {
   width: 420px;
-  position: fixed;
-  left: 0;
-  top: 80px;
-  height: calc(100vh - 80px);
+  min-height: 600px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .sidebarBackground {
@@ -178,12 +176,11 @@
 /* ===== MAIN CONTENT AREA ===== */
 .mainContent {
   flex: 1;
-  margin-left: 420px;
   padding: 4rem 5rem;
   display: flex;
   flex-direction: column;
   max-width: 1400px;
-  min-height: calc(100vh - 80px);
+  min-height: 600px;
 }
 
 /* Progress Bar */
@@ -589,9 +586,16 @@
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1280px) {
+  .mainContent {
+    padding: 3.5rem 4rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .optionsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 
   .mainContent {
@@ -605,10 +609,9 @@
   }
 
   .sidebar {
-    position: relative;
     width: 100%;
     height: 300px;
-    top: 0;
+    min-height: 300px;
   }
 
   .sidebarContent {
@@ -626,11 +629,13 @@
     padding-bottom: 1rem;
     margin-left: 0;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .timelineStep {
     flex-direction: column;
     min-width: 100px;
+    flex-shrink: 0;
   }
 
   .timelineMarker {
@@ -656,12 +661,19 @@
   }
 
   .mainContent {
-    margin-left: 0;
     padding: 2.5rem 2rem;
   }
 
   .questionTitle {
     font-size: 1.75rem;
+  }
+
+  .navigationButtons {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1.5rem 0 0;
+    margin-bottom: -1rem;
   }
 }
 
@@ -673,6 +685,7 @@
 
   .formGrid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .optionCard {
@@ -687,6 +700,13 @@
 
   .navigationButtons {
     flex-direction: column-reverse;
+    gap: 1rem;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1.5rem 0;
+    margin: 0 -1rem -1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
   }
 
   .sidebar {
@@ -708,6 +728,8 @@
   .prevButton,
   .nextButton {
     width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 
   .progressSteps {
@@ -721,7 +743,12 @@
   }
 
   .mainContent {
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .input,
+  .textarea {
+    font-size: 1rem;
   }
 }
 
@@ -732,6 +759,14 @@
 
   .brandSection {
     margin-bottom: 2rem;
+  }
+
+  .brandTitle {
+    font-size: 1.125rem;
+  }
+
+  .brandSubtitle {
+    font-size: 0.8125rem;
   }
 
   .timelineContainer {
@@ -749,7 +784,11 @@
   }
 
   .mainContent {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .questionTitle {
+    font-size: 1.25rem;
   }
 
   .serviceIconLarge {
@@ -763,5 +802,14 @@
   .interestChip {
     padding: 0.625rem 1.25rem;
     font-size: 0.8125rem;
+  }
+
+  .optionCard {
+    padding: 1.25rem 1rem;
+  }
+
+  .navigationButtons {
+    margin: 0 -0.5rem -0.5rem;
+    padding: 1rem 1rem;
   }
 }

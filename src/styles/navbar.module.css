@@ -3,8 +3,8 @@
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50;
-  width: 80%;
+  z-index: 1000;
+  width: 90%;
   max-width: 70rem;
 }
 
@@ -48,15 +48,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
-  color: #1f2937;
+  color: #000000;
   font-weight: bold;
   font-size: 1.25rem;
   letter-spacing: -0.025em;
   text-decoration: none;
   transition: color 0.3s;
+  position: relative;
+  z-index: 1001;
 }
 
 .logo:hover {
@@ -70,7 +73,7 @@
 }
 
 .navLink {
-  color: #374151;
+  color: #000000;
   font-weight: 500;
   font-size: 0.875rem;
   transition: color 0.3s;
@@ -101,8 +104,136 @@
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburgerLine {
+  width: 24px;
+  height: 2px;
+  background-color: #000000;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburgerLine:nth-child(1).hamburgerLineOpen {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburgerLine:nth-child(2).hamburgerLineOpen {
+  opacity: 0;
+}
+
+.hamburgerLine:nth-child(3).hamburgerLineOpen {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobileBookButton {
+  display: none;
+}
+
+.desktopBookButton {
+  display: inline-block;
+}
+
+.menuOverlay {
+  display: none;
+}
+
+/* Desktop */
 @media (min-width: 1024px) {
   .navLinks {
     display: flex;
+  }
+}
+
+/* Tablet and Mobile */
+@media (max-width: 1023px) {
+  .navbar {
+    width: 95%;
+  }
+
+  .navContainer {
+    border-radius: 16px;
+    padding: 0.75rem 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .desktopBookButton {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    gap: 1.5rem;
+    align-items: flex-start;
+    z-index: 999;
+  }
+
+  .navLinksOpen {
+    right: 0;
+  }
+
+  .navLink {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+
+  .mobileBookButton {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .menuOverlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 95%;
+    top: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.125rem;
+  }
+
+  .navLinks {
+    width: 100%;
+    max-width: 280px;
   }
 }

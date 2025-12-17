@@ -1,6 +1,6 @@
 .heroSection {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
 }
@@ -16,55 +16,54 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .content {
   position: relative;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 5rem;
-  padding-right: 3rem;
+  padding: 6rem 1.5rem 3rem;
   max-width: 1280px;
   margin: 0 auto;
-  margin-top: -1rem;
 }
 
 .heroText {
   width: 100%;
-  max-width: 80rem;
+  max-width: 100%;
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   color: white;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .subtext {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 42rem;
-  margin-bottom: 3rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 100%;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .ctaButtons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.875rem;
+  width: 100%;
 }
 
 .primaryButton {
   background-color: white;
   color: #111827;
-  padding: 0.75rem 1.75rem;
+  padding: 1rem 1.5rem;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 1rem;
@@ -72,10 +71,12 @@
   transition: all 0.3s;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  width: 100%;
 }
 
 .primaryButton:hover {
@@ -87,7 +88,7 @@
   background-color: transparent;
   border: 2px solid white;
   color: white;
-  padding: 0.75rem 1.75rem;
+  padding: 1rem 1.5rem;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 1rem;
@@ -95,9 +96,11 @@
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
   text-decoration: none;
+  width: 100%;
 }
 
 .secondaryButton:hover {
@@ -217,12 +220,20 @@
 .cardImage {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .cardImage:hover {
   transform: scale(1.05);
+}
+
+.fullWidthImage {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .textContent {
@@ -390,8 +401,126 @@
   object-position: center;
 }
 
-/* Tablet - About Section */
+/* Small Mobile */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .subtext {
+    font-size: 0.9375rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.875rem;
+  }
+
+  .aboutHeading {
+    font-size: 1.875rem;
+  }
+
+  .aboutSubtext {
+    font-size: 1rem;
+  }
+
+  .largeImageCard,
+  .smallImageCard {
+    border-radius: 16px;
+  }
+
+  .fullWidthImageWrapper {
+    height: 250px;
+  }
+
+  .ctaImageWrapper {
+    height: 400px;
+  }
+
+  .ctaContent {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .ctaHeading {
+    font-size: 1.75rem;
+  }
+
+  .ctaSubtext {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Large Mobile */
+@media (min-width: 481px) and (max-width: 767px) {
+  .content {
+    padding: 6rem 2rem 3rem;
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .subtext {
+    font-size: 1.0625rem;
+  }
+
+  .ctaButtons {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: auto;
+    padding: 0.875rem 1.75rem;
+  }
+
+  .sectionHeading {
+    font-size: 2.25rem;
+  }
+
+  .fullWidthImageWrapper {
+    height: 350px;
+  }
+
+  .ctaImageWrapper {
+    height: 450px;
+  }
+
+  .ctaContent {
+    padding: 3rem 2rem;
+  }
+
+  .ctaHeading {
+    font-size: 2.25rem;
+  }
+}
+
+/* Tablet */
 @media (min-width: 768px) {
+  .content {
+    padding: 6rem 3rem 3rem;
+  }
+
+  .heading {
+    font-size: 2.75rem;
+  }
+
+  .subtext {
+    font-size: 1.125rem;
+    max-width: 42rem;
+  }
+
+  .ctaButtons {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: auto;
+    padding: 0.875rem 1.75rem;
+  }
+
   .aboutContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -440,7 +569,16 @@
   }
 }
 
+/* Desktop */
 @media (min-width: 1024px) {
+  .content {
+    padding: 6rem 5rem 3rem;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
   .aboutContainer {
     gap: 3rem;
   }
@@ -471,5 +609,12 @@
 
   .ctaSubtext {
     font-size: 1.375rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+  .heading {
+    font-size: 4rem;
   }
 }

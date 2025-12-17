@@ -6,9 +6,11 @@ import styles from "@/styles/request.module.css";
 
 export default function RequestPage() {
   return (
-    <main className={styles.main}>
-      <Navbar />
-      <RequestForm />
-    </main>
+    <div className="page-with-sidebar">
+      <main className={styles.main}>
+        <Navbar />
+        <RequestForm />
+      </main>
+    </div>
   );
 }
