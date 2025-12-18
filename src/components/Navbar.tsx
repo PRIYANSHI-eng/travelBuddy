@@ -1,70 +1,66 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "@/styles/navbar.module.css";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const isActive = (href: string) => pathname === href;
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navContainer}>
-        <div className={styles.navContent}>
-          {/* Logo */}
-          <Link href="/" className={styles.logo} onClick={closeMenu}>
-            TravelBuddy
+      <div className={styles.container}>
+        {/* Logo */}
+        <Link href="/" className={styles.logo}>
+          TravelBuddy
+        </Link>
+
+        {/* Desktop Links */}
+        <div className={styles.links}>
+          <Link className={`${styles.link} ${isActive("/") ? styles.active : ""}`} href="/">
+            Home
           </Link>
-
-          {/* Center Navigation - Hidden on mobile */}
-          <div className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
-            <Link href="/" className={styles.navLink} onClick={closeMenu}>
-              Home
-            </Link>
-            <Link href="/request" className={styles.navLink} onClick={closeMenu}>
-              Travel Request
-            </Link>
-            <Link href="/thank-you" className={styles.navLink} onClick={closeMenu}>
-              Thank You
-            </Link>
-            <Link href="/contact" className={styles.navLink} onClick={closeMenu}>
-              Contact
-            </Link>
-            {/* Mobile CTA in menu */}
-            <Link href="/my-story" className={`${styles.bookButton} ${styles.mobileBookButton}`} onClick={closeMenu}>
-              My Story
-            </Link>
-          </div>
-
-          {/* Desktop CTA Button */}
-          <Link href="/my-story" className={`${styles.bookButton} ${styles.desktopBookButton}`}>
+          <Link className={`${styles.link} ${isActive("/request") ? styles.active : ""}`} href="/request">
+            Travel Request
+          </Link>
+          <Link className={`${styles.link} ${isActive("/my-story") ? styles.active : ""}`} href="/my-story">
             My Story
           </Link>
+          <Link className={`${styles.link} ${isActive("/contact") ? styles.active : ""}`} href="/contact">
+            Contact
+          </Link>
+        </div>
 
-          {/* Hamburger Menu Button */}
-          <button 
-            className={styles.hamburger} 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
+        {/* Right Side */}
+        <div className={styles.right}>
+          <Link href="/request" className={styles.bookNow}>
+            Book Now
+          </Link>
+
+          <button
+            className={styles.hamburger}
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
           >
-            <span className={`${styles.hamburgerLine} ${isMenuOpen ? styles.hamburgerLineOpen : ''}`}></span>
-            <span className={`${styles.hamburgerLine} ${isMenuOpen ? styles.hamburgerLineOpen : ''}`}></span>
-            <span className={`${styles.hamburgerLine} ${isMenuOpen ? styles.hamburgerLineOpen : ''}`}></span>
+            <span />
+            <span />
+            <span />
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div className={styles.menuOverlay} onClick={closeMenu}></div>
+      {/* Mobile Menu (NO extra button anymore) */}
+      {open && (
+        <div className={styles.mobileMenu}>
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/request" onClick={() => setOpen(false)}>Travel Request</Link>
+          <Link href="/my-story" onClick={() => setOpen(false)}>My Story</Link>
+          <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+        </div>
       )}
     </nav>
   );

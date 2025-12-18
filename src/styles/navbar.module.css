@@ -1,239 +1,130 @@
+/* MAIN NAVBAR */
 .navbar {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  width: 90%;
-  max-width: 70rem;
-}
-
-.navContainer {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.08) 100%
-  );
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border-radius: 9999px;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
   position: relative;
+  z-index: 1000;
 }
 
-.navContainer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0.4) 100%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.navContent {
+/* INNER CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
+/* LOGO */
 .logo {
-  color: #000000;
-  font-weight: bold;
-  font-size: 1.25rem;
-  letter-spacing: -0.025em;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111;
   text-decoration: none;
-  transition: color 0.3s;
-  position: relative;
-  z-index: 1001;
 }
 
-.logo:hover {
-  color: #059669;
+/* LINKS */
+.links {
+  display: flex;
+  gap: 2.5rem;
 }
 
-.navLinks {
-  display: none;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.navLink {
-  color: #000000;
+.link {
+  text-decoration: none;
+  color: #555;
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 0.875rem;
-  transition: color 0.3s;
-  text-decoration: none;
 }
 
-.navLink:hover {
-  color: #059669;
+.link:hover {
+  color: #111;
 }
 
-.bookButton {
-  background-color: white;
-  color: #111827;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
+.active {
+  color: #111;
   font-weight: 600;
-  font-size: 0.875rem;
-  transition: all 0.3s;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border: none;
-  cursor: pointer;
+}
+
+/* RIGHT SIDE */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* BOOK NOW */
+.bookNow {
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
   text-decoration: none;
-  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-.bookButton:hover {
-  background-color: #f3f4f6;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+.bookNow:hover {
+  background: #000;
 }
 
-/* Hamburger Menu */
+/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1001;
-  position: relative;
 }
 
-.hamburgerLine {
-  width: 24px;
+.hamburger span {
+  width: 22px;
   height: 2px;
-  background-color: #000000;
-  transition: all 0.3s ease;
-  border-radius: 2px;
+  background: #111;
 }
 
-.hamburgerLine:nth-child(1).hamburgerLineOpen {
-  transform: rotate(45deg) translate(5px, 5px);
+/* MOBILE MENU */
+.mobileMenu {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 1.2rem;
 }
 
-.hamburgerLine:nth-child(2).hamburgerLineOpen {
-  opacity: 0;
+.mobileMenu a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-.hamburgerLine:nth-child(3).hamburgerLineOpen {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
+/* .mobileBook {
+  margin-top: 1.5rem;
+  background: #111;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+} */
 
-.mobileBookButton {
-  display: none;
-}
-
-.desktopBookButton {
-  display: inline-block;
-}
-
-.menuOverlay {
-  display: none;
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .navLinks {
-    display: flex;
-  }
-}
-
-/* Tablet and Mobile */
-@media (max-width: 1023px) {
-  .navbar {
-    width: 95%;
-  }
-
-  .navContainer {
-    border-radius: 16px;
-    padding: 0.75rem 1rem;
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .links {
+    display: none;
   }
 
   .hamburger {
     display: flex;
-  }
-
-  .desktopBookButton {
-    display: none;
-  }
-
-  .navLinks {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    padding: 5rem 2rem 2rem;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    gap: 1.5rem;
-    align-items: flex-start;
-    z-index: 999;
-  }
-
-  .navLinksOpen {
-    right: 0;
-  }
-
-  .navLink {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-    width: 100%;
-  }
-
-  .mobileBookButton {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 1rem;
-    padding: 0.875rem 1.5rem;
-  }
-
-  .menuOverlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-    width: 95%;
-    top: 0.5rem;
-  }
-
-  .logo {
-    font-size: 1.125rem;
-  }
-
-  .navLinks {
-    width: 100%;
-    max-width: 280px;
   }
 }

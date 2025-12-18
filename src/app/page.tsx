@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="relative">
       {/* Navbar */}
-      <Navbar />
+
 
       {/* Hero Section with Video Background */}
       <section className={styles.heroSection}>

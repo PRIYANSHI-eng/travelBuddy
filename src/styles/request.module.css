@@ -7,8 +7,9 @@
 
 .requestContainer {
   display: flex;
-  min-height: calc(100vh - 80px);
-  margin-top: 80px;
+  min-height: 100vh;
+  padding-top: 72px;   /* navbar height */
+  margin-top: 0;
 }
 
 /* ===== LEFT SIDEBAR WITH IMAGE BACKGROUND ===== */
@@ -19,6 +20,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-top: -80px;
 }
 
 .sidebarBackground {

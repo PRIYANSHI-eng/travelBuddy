@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar"; // Importing Navbar for dynamic styling
 import styles from "@/styles/contact.module.css";
 
 export default function ContactPage() {
@@ -52,7 +52,7 @@ export default function ContactPage() {
 
   return (
     <main className={styles.main}>
-      <Navbar />
+
 
       {/* Hero Section */}
       <div className={styles.heroSection}>
