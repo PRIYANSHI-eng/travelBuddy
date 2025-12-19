@@ -19,13 +19,14 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 72px); /* navbar height */
   background-image: url('/assests/image6.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;   /* ⬅ reduced from 4rem */
 }
+
 
 .heroOverlay {
   position: absolute;
