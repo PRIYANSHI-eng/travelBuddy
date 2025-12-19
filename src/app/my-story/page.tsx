@@ -68,17 +68,17 @@ export default function MyStoryPage() {
             </p>
           </div>
 
-          {/* <div className={styles.galleryGrid}>
+          { <div className={styles.galleryGrid}>
             <div className={styles.galleryCard}>
-              <Image src="/assests/click1.jpg" alt="Travel Click" fill className={styles.image} />
+              <Image src="/assests/click1.jpeg" alt="Travel Click" fill className={styles.image} />
             </div>
             <div className={styles.galleryCard}>
-              <Image src="/assests/click2.jpg" alt="Travel Click" fill className={styles.image} />
+              <Image src="/assests/click2.jpeg" alt="Travel Click" fill className={styles.image} />
             </div>
             <div className={styles.galleryCard}>
-              <Image src="/assests/click3.jpg" alt="Travel Click" fill className={styles.image} />
+              <Image src="/assests/click3.jpeg" alt="Travel Click" fill className={styles.image} />
             </div>
-          </div> */}
+          </div> }
 
           <p className={styles.instagramNote}>
             To view more, visit my Instagram —
