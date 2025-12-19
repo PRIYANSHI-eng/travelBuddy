@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   title: "TravelBuddy - Your Personal Travel Planning Companion",
@@ -18,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ fontFamily: inter.style.fontFamily }}>
-      <body style={{ margin: 0, padding: 0, backgroundColor: '#ffffff', color: '#171717', fontFamily: inter.style.fontFamily }}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="bg-cream text-primary font-sans antialiased">
         <Navbar />
         {children}
         <Footer />

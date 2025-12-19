@@ -12,25 +12,26 @@ export default function Home() {
       {/* Navbar */}
 
 
-      {/* Hero Section with Video Background */}
+      {/* Hero Section with Image Background */}
       <section className={styles.heroSection}>
-        {/* Video Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={styles.videoBackground}
-        >
-          <source src="/assests/video.mp4" type="video/mp4" />
-        </video>
+        {/* Image Background */}
+        <div className={styles.heroBackground}>
+          <Image
+            src="https://cdn.prod.website-files.com/67daff2a6e8cc98d865cc436/682ca903272ae46a0492aaec_tino-rischawy-NKDI7qlLsM0-unsplash-2.jpg"
+            alt="Scenic Landscape"
+            fill
+            priority
+            className={styles.backgroundImage}
+            quality={100}
+          />
+        </div>
 
         {/* Overlay */}
         <div className={styles.overlay} />
 
         {/* Content */}
         <div className={styles.content}>
-          {/* Hero Text - Left Aligned */}
+          {/* Hero Text - Centered */}
           <div className={styles.heroText}>
             <h1 className={styles.heading}>
               Stress-Free Travel,<br />Planned Just for You
@@ -39,19 +40,10 @@ export default function Home() {
               We plan your flights, hotels, and visas personally — so you travel without the hassle of comparing sites or managing details. From booking your perfect accommodations to securing travel documents, we handle every aspect of your journey.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <div className={styles.ctaButtons}>
               <Link href="/request" className={styles.primaryButton}>
                 Start Your Travel Request
-                <svg className={styles.icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-              <Link href="/request" className={styles.secondaryButton}>
-                Plan Your Trip
-                <svg className={styles.icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
               </Link>
             </div>
           </div>
