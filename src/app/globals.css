@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color Palette */
+  --color-primary: #1A3C34;  /* Dark Green */
+  --color-cream: #F9F5F0;    /* Cream Background */
+  --color-accent: #D48C70;   /* Peach/Orange */
+  
+  /* Semantic Colors */
+  --background: var(--color-cream);
+  --foreground: var(--color-primary);
+  
+  /* Fonts */
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
