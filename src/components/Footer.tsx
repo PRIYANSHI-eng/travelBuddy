@@ -28,21 +28,28 @@ export default function Footer() {
           </div>
 
           {/* Company Column */}
-          <div className={styles.footerColumn}>
-            <h4 className={styles.columnTitle}>Company</h4>
-            <ul className={styles.linkList}>
-              {/* <li><a href="#about" className={styles.footerLink}>About Us</a></li> */}
-              <li><a href="#privacy" className={styles.footerLink}>Privacy Policy</a></li>
-              <li><a href="#terms" className={styles.footerLink}>Terms & Conditions</a></li>
-            </ul>
-          </div>
+         <div className={styles.footerColumn}>
+  <h4 className={styles.columnTitle}>Company</h4>
+  <ul className={styles.linkList}>
+    <li>
+      <a href="/privacy-policy" className={styles.footerLink}>
+        Privacy Policy
+      </a>
+    </li>
+    <li>
+      <a href="/terms" className={styles.footerLink}>
+        Terms & Conditions
+      </a>
+    </li>
+  </ul>
+</div>
 
           {/* Support Column */}
           <div className={styles.footerColumn}>
             <h4 className={styles.columnTitle}>Support</h4>
             <ul className={styles.linkList}>
               <li><a href="/contact" className={styles.footerLink}>Help Center</a></li>
-              <li><a href="#faq" className={styles.footerLink}>FAQ</a></li>
+              <li><a href="/faq" className={styles.footerLink}>FAQ</a></li>
               <li><a href="/contact" className={styles.footerLink}>Contact Us</a></li>
             </ul>
           </div>

@@ -1,0 +1,25 @@
+.page {
+  background: var(--color-cream);
+  min-height: 100vh;
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 5vw, 4.2rem);
+  line-height: 1.2;
+  margin-bottom: 3.5rem;
+}
+
+
+.text {
+  line-height: 1.9;
+  margin-bottom: 1.75rem;
+}
+
