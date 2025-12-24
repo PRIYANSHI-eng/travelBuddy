@@ -22,8 +22,8 @@ export default function Footer() {
             <ul className={styles.linkList}>
               <li><a href="/" className={styles.footerLink}>Home</a></li>
               <li><a href="/request" className={styles.footerLink}>Travel Request</a></li>
-              <li><a href="#services" className={styles.footerLink}>Services</a></li>
-              <li><a href="#contact" className={styles.footerLink}>Contact</a></li>
+              <li><a href="/my-story" className={styles.footerLink}>My Story</a></li>
+              <li><a href="/contact" className={styles.footerLink}>Contact</a></li>
             </ul>
           </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
           <div className={styles.footerColumn}>
             <h4 className={styles.columnTitle}>Company</h4>
             <ul className={styles.linkList}>
-              <li><a href="#about" className={styles.footerLink}>About Us</a></li>
+              {/* <li><a href="#about" className={styles.footerLink}>About Us</a></li> */}
               <li><a href="#privacy" className={styles.footerLink}>Privacy Policy</a></li>
               <li><a href="#terms" className={styles.footerLink}>Terms & Conditions</a></li>
             </ul>
@@ -41,7 +41,7 @@ export default function Footer() {
           <div className={styles.footerColumn}>
             <h4 className={styles.columnTitle}>Support</h4>
             <ul className={styles.linkList}>
-              <li><a href="#help" className={styles.footerLink}>Help Center</a></li>
+              <li><a href="/contact" className={styles.footerLink}>Help Center</a></li>
               <li><a href="#faq" className={styles.footerLink}>FAQ</a></li>
               <li><a href="/contact" className={styles.footerLink}>Contact Us</a></li>
             </ul>

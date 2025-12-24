@@ -14,15 +14,15 @@ export default function Home() {
 
       {/* Hero Section with Image Background */}
       <section className={styles.heroSection}>
-        {/* Image Background */}
+        {/* Video Background */}
         <div className={styles.heroBackground}>
-          <Image
-            src="https://cdn.prod.website-files.com/67daff2a6e8cc98d865cc436/682ca903272ae46a0492aaec_tino-rischawy-NKDI7qlLsM0-unsplash-2.jpg"
-            alt="Scenic Landscape"
-            fill
-            priority
-            className={styles.backgroundImage}
-            quality={100}
+          <video
+            className={styles.backgroundVideo}
+            src="/assests/video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
           />
         </div>
 
